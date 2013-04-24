@@ -1,0 +1,435 @@
+.AllContent
+{    
+    width:100%;
+    height: 100%;    
+    margin: auto;
+    font-family: verdana,Helvica,arial;
+    clear:both;
+    float:left;     
+}
+
+body
+{
+    background-image: url("../images/wowBackground.jpg");
+    margin-left: auto;
+    margin-right:auto;
+    width: 1000px;
+}
+
+.Header_wrapper
+{            
+    font-size: 15pt; 
+    width: 100%;
+    height: 100px;    
+    border-radius: 15px;
+    -moz-border-radius: 15px;  
+    position: relative;
+    z-index: 0;
+}
+.Header
+{        
+    color:white;
+    background-color: darkolivegreen;
+    opacity:0.4;
+    filter: alpha(opacity=30);
+    font-size: 15pt;    
+    padding-left: 15px;     
+    width: 100%;
+    height: 100px;    
+    border-radius: 15px;
+    -moz-border-radius: 15px;   
+    position: absolute;
+    z-index: 0;
+    clear:both;
+    float:left;
+}
+.HeaderImage
+{        
+    width:619px;
+    height: 93px;
+    position: absolute;
+    z-index: 1;
+}
+
+.userBox
+{
+    widht:auto;
+    height:auto;
+    position: absolute;
+    z-index: 1;
+    bottom: 0px;
+    right: 0px;
+    font-size: 7pt;
+}
+
+.userBox input[type="text"],.userBox input[type="password"]
+{
+    width: 50px;
+    font-size: 7pt;
+    
+}
+
+.MainContent_wrapper
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 0;
+    float:left;    
+}
+
+.MainContent
+{      
+    width:100%;
+    height: 100%;    
+    margin: auto;
+    padding:5px;
+    font-family: verdana,Helvica,arial;
+    clear:both;
+    float:left; 
+    background-color: rgba(0,0,0,0.5);
+}
+
+.MainContent_background
+{
+   background-color: black;
+   opacity:0.8;
+   filter: alpha(opacity=80);
+   position: relative;
+   z-index: -3;
+   width: 100%;
+   height: 100%;       
+   padding: 7px;
+}
+
+.Menu
+{       
+    position: inherit;
+    width: 100%;
+    height: auto; 
+    clear:both;
+    float:left;
+}
+
+.MenuTap
+{
+    padding: 5px;
+    background-color: Black;
+    color:white;
+    height:100%;
+    float:left;
+    border-top-left-radius:15px;
+    border-top-right-radius:15px;
+    -moz-border-top-left-radius:15px;
+    -moz-border-top-right-radius:15px;
+    margin-left: 5px;
+}
+.MenuTap:hover
+{    
+    background-color: cadetblue; 
+    cursor: pointer;
+}
+.MenuTap:active
+{    
+    background-color: steelblue;
+    color:white;
+}
+.SubMenu
+{
+    background-color: cadetblue;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1;    
+}
+.SubMenuTap
+{
+    padding: 5px;
+    background-color: lightblue;
+    height:20px;            
+}
+.SubMenuTap:hover
+{
+    background-color: lightblue;    
+}
+.SubMenuTap:active
+{
+    background-color: steelblue;
+    color:white;
+}
+.ErrorBox
+{
+    color:red;
+    background-color: lightpink;
+    z-index: 1; 
+    position: absolute;
+    top: 50%;
+    left:auto;
+    right: auto;
+    width: 250px;       
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    border: 1px solid;
+    padding:5px; 
+    box-shadow:0px 0px 3px 3px black;
+    visibility: hidden;
+}
+.ErrorBoxHeader
+{
+    width:100%;
+    float:left;
+    border-bottom: 1px solid;
+    color:black;
+    font-weight: bold;
+}
+
+.closeTag
+{
+    width: 16px;
+    height: 16px;    
+    float: right;    
+    background-image: url("../images/close.png");
+}
+
+.closeTag:hover
+{   
+    cursor: pointer;
+}
+
+input[type="text"],input[type="password"]
+{
+    background-color: black;
+    color:white; 
+}
+input[type="submit"],input[type="button"]
+{
+    background-color: gray;
+    border-radius:2px;
+    border:1px solid black;
+    cursor:pointer;
+}
+input[type="submit"]:hover,input[type="button"]:hover
+{
+    background-color: black;
+    color:white;    
+}
+
+.colorTable
+{
+	background-color: black;
+}
+
+.colorTable td
+{
+	width: 15px;
+        height: 15px;
+}
+
+.prom_slidePanel
+{
+   width: 710px; 
+   height: 300px;
+   position: relative;   
+   z-index: 0;
+}
+
+.prom_slide
+{
+   display: block;
+   width: 100%; 
+   height: 100%; 
+   left: 0px; 
+   top: 0pt; 
+   visibility: hidden;
+   position: absolute;
+   z-index: 1;
+}
+
+.prom_slide_image
+{
+   display: block;
+   width: 100%; 
+   height: 100%; 
+   left: 0px; 
+   top: 0pt; 
+   visibility: visible;
+   position: absolute;
+   z-index: 1;
+}
+
+.prom_slide_next
+{
+    display: block;
+    height: 23px;
+    width: 23px;
+    top:0px;
+    right:0px;
+    position: absolute;
+    z-index: 2;    
+    opacity:0.4;        
+    background-image:url('../images/next_arrow.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.prom_slide_next img
+{
+    height: 100%;
+    width: 100%;
+}
+
+.prom_slide_previous
+{
+    display: block;
+    height: 23px;
+    width: 23px;
+    top:0px;
+    left:0px;
+    position: absolute;
+    z-index: 2;    
+    opacity:0.4;       
+    background-image:url('../images/previous_arrow.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+.prom_slide_previous img
+{
+    height: 100%;
+    width: 100%;
+}
+
+.prom_slide_previous:hover
+{    
+    height:33px;
+    width: 33px;
+    opacity:1;
+    cursor: pointer;
+}
+.prom_slide_next:hover
+{    
+    height: 33px;
+    width: 33px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.prom_slide_link_container
+{
+    height: 33px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    z-index: 2;
+}
+
+.prom_slide_link
+{   
+    margin-left:5px;
+    height:15px;
+    width: 15px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    background-color: turquoise;
+    float: left;
+}
+
+.prom_slide_link_current
+{    
+    height:15px;
+    width: 15px;
+    margin-left:5px;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    background-color: aquamarine;
+    float: left;
+}
+
+.prom_slide_link:hover
+{    
+    background-color: aquamarine;    
+    cursor: pointer;
+}
+
+.ForumThreadList
+{
+    width: 290px;
+    padding: 5px;
+    float:left;
+}
+.ForumThread
+{
+    width:100%;    
+    margin-top: 5px;
+    background-color: black;
+    color:white;
+    cursor: pointer;
+    padding: 5px;
+}
+.ForumThread h5,.ForumPost h5
+{
+    font-size: 7pt;    
+}
+.ForumPostList
+{   
+    margin-left:5px;
+    width: 685px;
+    padding: 5px;
+    float:left;    
+}
+
+.ForumPost
+{    
+    width:670px;   
+    margin-top: 5px;
+    background-color: black;
+    color:white;    
+    padding:5px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    vertical-align: top;
+}
+
+.ForumPostUserInfo
+{
+    width:170px;    
+    text-align: center;
+    border-right: 1px dashed white;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.ForumThreadAnchor
+{
+    text-decoration: none;    
+}
+
+.ForumPostContent
+{
+    width:489px;
+    height: 100%;        
+    display: inline-block;
+    vertical-align: top;
+}
+.ForumPostBottom
+{
+    width:100%;
+    text-align:right;    
+}
+.ForumPostCommentList
+{
+    width:500px;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: 5px;
+    background-color: gray;
+    color:white;
+    border-bottom-left-radius:15px;
+    border-bottom-right-radius:15px;
+}
+
+.ForumPostComment
+{
+    width: 95%;
+    padding: 5px;    
+    border-bottom: 1px dashed white;
+}
