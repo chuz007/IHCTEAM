@@ -21,7 +21,7 @@
             $user->getUser(null,null,  session_id());
         }  catch (Exception $e)
         {
-            echo $errorHandler->processError($e);
+            $errorHandler->processError($e);
         }
         
     }
@@ -35,8 +35,8 @@
     }catch(Exception $e){
         $_POST['pointer']="home";
         $_GET['pointer']="home";
-        echo processPagePointer();
-        echo $errorHandler->processError($e);
+        $errorHandler->processError($e);
+        echo renderFile('header.php'). "invalid pointer" . renderFile('footer.php');        
     }
 ?>        
 

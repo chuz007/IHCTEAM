@@ -6,6 +6,7 @@
         <script src="js/jquery-1.7.2.js" ></script>
         <script src="js/jquery-extending.js" ></script>
         <script src="js/actions.js" ></script>
+        <script src="js/plugins.js" ></script>
         <title>Darkness Cradle Beta - <?php echo (isset($_GET['pointer']))?$_GET['pointer']:((isset($_POST['pointer']))?$_POST['pointer']:"Home"); ?></title>
     </head>
     <body>  

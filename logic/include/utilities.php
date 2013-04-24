@@ -44,7 +44,7 @@
             $pointer->getPointer($pointerName);
             if($pointer->id_pointer==null)
             {
-                throw new Exception("INVALID POINTER");
+                throw new Exception("INVALID POINTER","001");
             }
             include $pointer->tx_controllerpath;            
             $isAllowed = false;
