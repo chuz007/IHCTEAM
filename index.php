@@ -1,9 +1,7 @@
 <?php    
     require_once 'logic/include/include.php';
-    global $errorHandler;
-    global $menuBuilder;
-    global $headerBuilder;
-    global $dbConnector;    
+    global $errorHandler;    
+      
     global $user;
     $user->setDBConnector();
     session_start();

@@ -27,6 +27,13 @@
             
     }
     
+    /** 
+     * @global type $menuBuilder
+     * @global type $headerBuilder
+     * @global Pointer $pointer
+     * @return string with content for the respective counter.
+     * @throws Exception
+     */
     function processPagePointer()
     {
         global $menuBuilder;
@@ -111,6 +118,11 @@
         return $contents;
     }
     
+    /**
+     * Escapes input or output db strings to avoid SQL injectionss
+     * @param string $str to be escapeds
+     * @return string escaped
+     */
     function dbStr($str)
     {
         $str = str_replace("''", "'", $str);
