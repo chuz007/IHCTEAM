@@ -22,8 +22,8 @@ function userLogin_hasHeader()
 function userLogin_content()
 {
     global $user;
-    global $username_error;
-    global $passdord_error;
+    //global $username_error;
+    //global $passdord_error;
     
     if(isset($_POST['username']))
     {        
@@ -39,14 +39,15 @@ function userLogin_content()
         {
             if(!$user->validateLogin($_POST['username'],$_POST['password']))
             {
-                echo '<script type="text/javascript">window.alert("Invalid Username or Password");</script>';
+                //echo '<script type="text/javascript">window.alert("Invalid Username or Password");</script>';
+                throw new Exception("Invalid Username or Password",01);
             }
         }catch(Exception $e)
         {
             throw $e;
         }        
     }
-    return renderFile('content/home/gui_home.php');
+    return header("Location: ?pointer=home");
 }
 
 //
