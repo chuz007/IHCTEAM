@@ -5,12 +5,14 @@
 function ErrorHandler(cssClass)
 {    
     this.errorList = new Array();
-    this.cssCls = cssClass;
-    
+     
     
     this.displayMessages = function()
     {        
-        
+        if($('.error').size() > 0)
+        {
+            $('#ErrorBox').css("visibility","visible");
+        }
     };
 }
 
