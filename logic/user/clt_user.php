@@ -40,7 +40,7 @@ function userLogin_content()
             if(!$user->validateLogin($_POST['username'],$_POST['password']))
             {
                 //echo '<script type="text/javascript">window.alert("Invalid Username or Password");</script>';
-                throw new Exception("Invalid Username or Password","usr01s");
+                throw new Exception("Invalid Username or Password",01);
             }
         }catch(Exception $e)
         {
