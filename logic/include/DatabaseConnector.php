@@ -15,7 +15,7 @@ class DatabaseConnector
             if($this->dbConnection!==null || $this->dbConnection!== false)
                 $this->dbConnection=@mysql_connect($dbServer, $dbUser, $dbPassword,false,131072);     
             if(!$this->dbConnection)
-                throw new Exception ("Error when trying to connect to DB: " . mysql_error());
+                throw new Exception ("Error when trying to connect to DB: " . mysql_error(),2);
             @mysql_select_db($dbDatabase);
             //mysql_db_query($this->dbConnection,"use " . $dbDatabase);
         }catch(Exception $e)
@@ -36,8 +36,7 @@ class DatabaseConnector
     }
     
     function dbQuery($query)
-    {
-        global $dbDatabase;
+    {        
         try
         {            
             $this->openDBConnection();            
@@ -46,7 +45,7 @@ class DatabaseConnector
             return $result;
         }catch(Exception $e)
         {
-            throw new Exception("Error executing query:" . $e->getMessage());
+            throw new Exception("Error executing query:" . $e->getMessage(),2);
         }        
     }
 }

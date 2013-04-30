@@ -10,7 +10,8 @@
 
 body
 {
-    background-image: url("../images/wowBackground.jpg");
+    /*background-image: url("../images/wowBackground.jpg");*/
+    background-color:#006699;
     margin-left: auto;
     margin-right:auto;
     width: 1000px;

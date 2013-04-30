@@ -40,7 +40,7 @@ function userLogin_content()
             if(!$user->validateLogin($_POST['username'],$_POST['password']))
             {
                 //echo '<script type="text/javascript">window.alert("Invalid Username or Password");</script>';
-                throw new Exception("Invalid Username or Password",01);
+                throw new Exception("Invalid Username or Password",2);
             }
         }catch(Exception $e)
         {
@@ -74,9 +74,7 @@ function userLogout_hasHeader()
 function userLogout_content()
 {
     global $user;
-    global $username_error;
-    global $passdord_error;
-    
+        
     $user->closeSession();
     return header("Location: ?pointer=home");    
 }

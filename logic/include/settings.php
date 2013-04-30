@@ -18,9 +18,9 @@ global $imagesPath;
 //Inicialization of Global Variables
 
 $dbServer="localhost:3306";
-$dbUser="darkness";
-$dbPassword="@lphacode01";
-$dbDatabase="darknessdb";
+$dbUser="dbuser";
+$dbPassword="test@123";
+$dbDatabase="testdb";
 
 /*
 $dbServer="SQL09.FREEMYSQL.NET";

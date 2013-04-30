@@ -96,7 +96,7 @@ class User
                 return false;
             }else if($result[0]==-1)
             {
-                throw new Exception("Your account is blocked, please contact an administrador");
+                throw new Exception("Your account is blocked, please contact an administrador",2);
             }
         }catch(Exception $e)
         {

@@ -5,8 +5,8 @@ class HeaderBuilder
     function createHeader()
     {        
         return '<div class="Header_wrapper">
-                    <div class="Header"></div>
-                    <img class="HeaderImage" src="images/darknessCradleLogo.png" />
+                    <div class="Header">Test Framework</div>
+                    <img class="HeaderImage" />
                     '. $this->getUserBox() .'
                 </div>';
     }

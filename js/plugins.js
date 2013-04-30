@@ -5,7 +5,7 @@
 function ErrorHandler(cssClass)
 {    
     this.errorList = new Array();
-     
+    $('#ErrorBox .closeTag').on('click',this.onErrorBoxClose);
     
     this.displayMessages = function()
     {        
@@ -13,6 +13,11 @@ function ErrorHandler(cssClass)
         {
             $('#ErrorBox').css("visibility","visible");
         }
+    };
+    
+    this.onErrorBoxClose = function()
+    {
+        $('#ErrorBoxMessage').empty();
     };
 }
 

@@ -8,7 +8,7 @@
     function renderFile($file,$wrapper=null){            
             if (!file_exists($file)) 
             { 
-                    throw new Exception("File " . $file . " Not Found");                    
+                    throw new Exception("File " . $file . " Not Found",2);                    
             }
             try{
                 ob_start();                      
@@ -22,7 +22,7 @@
                 return  utf8_encode($contents); // Return the contents
             }  catch (Exception $e)
             {
-                throw new Exception("Failed trying to render the requested file: " . $file);
+                throw new Exception("Failed trying to render the requested file: " . $file,2);
             }
             
     }
@@ -51,21 +51,36 @@
             $pointer->getPointer($pointerName);
             if($pointer->id_pointer==null)
             {
-                throw new Exception("INVALID POINTER","001");
+                throw new Exception("INVALID POINTER",2);
             }
             include $pointer->tx_controllerpath;            
             $isAllowed = false;
             $hasMenu = true;
-            $hasHeader = true;
+            $isPage = true;
             $content="";
-            eval('$isAllowed = '.$pointer->tx_function."_permissionValidation();");
-            eval('$hasMenu = '.$pointer->tx_function."_hasMenu();");
-            eval('$hasHeader = '.$pointer->tx_function."_hasHeader();");
+            if(function_exists($pointer->tx_function ."_permissionValidation")){
+                eval('$isAllowed = '.$pointer->tx_function."_permissionValidation();");
+            }else
+            {
+                $isAllowed = defaultPermissionValidation();
+            }
+            if(function_exists($pointer->tx_function ."_hasMenu")){
+                eval('$hasMenu = '.$pointer->tx_function."_hasMenu();");
+            }else
+            {
+                $hasMenu = defaultHasMenuFunction();
+            }
+            if(function_exists($pointer->tx_function ."_isPage")){
+                eval('$isPage = '.$pointer->tx_function."_isPage();");
+            }else
+            {
+                $isPage = defaultIsPage();
+            }
             if($isAllowed)
             {          
                 $tempContent = "";
                 eval('$tempContent .= '.$pointer->tx_function."_content();");                
-                if($hasHeader)
+                if($isPage)
                 {
                     $content .= $headerBuilder->createHeader();
                 }
@@ -78,7 +93,7 @@
             {
                 $content = "ACCESS DENIED";
             }
-            if(!isset($_GET["json"]))
+            if($isPage)
             {
                 return renderFile('header.php'). $content . renderFile('footer.php');
             }else
@@ -90,6 +105,38 @@
         {
             throw $e;
         }
+    }
+    
+    
+    function defaultPermissionValidation()
+    {
+        global $user;
+        global $pointer;
+        if($pointer->bl_allowanonimous)
+            return true;
+        else 
+            return $user->isAllowed($pointer->id_pointer);
+    }
+    
+    function defaultHasMenuFunction()
+    {
+        if(isset ($_GET["json"]) || isset($_GET["RAWRESULT"]))
+        {
+            return false;
+        }else if (isset($_GET["menu"])){
+            if($_GET["menu"]=="0")
+                return false;        
+        }else
+            return true;
+    }
+    
+    function defaultIsPage()
+    {
+        if(isset ($_GET["json"]) || isset($_GET["RAWRESULT"]))
+        {
+            return false;
+        }else
+            return true;
     }
     
     /*

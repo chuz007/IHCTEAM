@@ -3,34 +3,6 @@ include_once 'logic/forum/forum.php';
 global $forumController;
 $forumController = new ForumController();
 
-function processForumRequests_permissionValidation()
-{
-    global $user;
-    global $pointer;
-    if($pointer->bl_allowanonimous)
-        return true;
-    else 
-        return $user->isAllowed($pointer->id_pointer);
-}
-
-function processForumRequests_hasMenu()
-{
-    if(isset ($_GET["json"]))
-    {
-        return false;
-    }else
-        return true;
-}
-
-function processForumRequests_hasHeader()
-{
-    if(isset ($_GET["json"]))
-    {
-        return false;
-    }else
-        return true;
-}
-
 function processForumRequests_content()
 {   
     global $user;
