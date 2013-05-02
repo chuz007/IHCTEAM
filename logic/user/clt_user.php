@@ -1,37 +1,16 @@
 <?php
-function userLogin_permissionValidation()
-{
-    global $user;
-    global $pointer;
-    if($pointer->bl_allowanonimous)
-        return true;
-    else 
-        return $user->isAllowed($pointer->id_pointer);
-}
-
-function userLogin_hasMenu()
-{
-    return true;
-}
-
-function userLogin_hasHeader()
-{
-    return true;
-}
 
 function userLogin_content()
 {
     global $user;
-    //global $username_error;
-    //global $passdord_error;
     
     if(isset($_POST['username']))
     {        
-        if(strlen(trim($_POST['username'])) > 12)
+	    if(strlen(trim($_POST['username'])) > 12) // User name format allowed max 11 char long
         {
             throw new exception("Invalid Username Format");
         }
-        if(strlen(trim($_POST['password'])) > 12)
+        if(strlen(trim($_POST['password'])) > 12)	// User pasword format allowed max 11 char long 
         {
             throw new exception("Invalid Password Format");
         }
@@ -39,7 +18,6 @@ function userLogin_content()
         {
             if(!$user->validateLogin($_POST['username'],$_POST['password']))
             {
-                //echo '<script type="text/javascript">window.alert("Invalid Username or Password");</script>';
                 throw new Exception("Invalid Username or Password",2);
             }
         }catch(Exception $e)
@@ -50,7 +28,6 @@ function userLogin_content()
     return header("Location: ?pointer=home");
 }
 
-//
 function userLogout_permissionValidation()
 {
     global $user;
@@ -66,7 +43,7 @@ function userLogout_hasMenu()
     return true;
 }
 
-function userLogout_hasHeader()
+function userLogout_isPage()
 {
     return true;
 }
@@ -74,7 +51,6 @@ function userLogout_hasHeader()
 function userLogout_content()
 {
     global $user;
-        
     $user->closeSession();
     return header("Location: ?pointer=home");    
 }
