@@ -1,6 +1,3 @@
-/**
- * 
- */
 function SlidePanel (idPanel,name)
 {
     this.idPanel=idPanel;    
@@ -13,7 +10,6 @@ function SlidePanel (idPanel,name)
     this.timer = null;
     this.pause = false;
     this.pauseInterval = 0;
-    
     this.begin = function()
     {
          $('#' + idPanel + '_slide_image0').attr("src", this.imgSources[0]);
@@ -80,7 +76,6 @@ function SlidePanel (idPanel,name)
     this.slideShowBegin = function()
     {
        this.nextSlide();
-       //this.timer = setTimeout(this.name + '.slideShowBegin("' + this.name + '")', this.slideShowInterval);
     };   
     
     this.nextSlide = function()
