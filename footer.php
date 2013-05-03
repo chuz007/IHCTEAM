@@ -13,6 +13,7 @@
     </div> 
     <script lang="javascript">
         var eHandler = new ErrorHandler();
+        eHandler.initialize();
         (function(){            
             eHandler.displayMessages();
         })();
